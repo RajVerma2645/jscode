@@ -1,0 +1,10 @@
+
+Typing doc and pressing tab in .html extension file will autofill the basic structure of html file
+1 function should be around 10-15 lines based on SRP(Single Responsibility Principle )
+Name of a function should be imperative/verb/action.
+Any fool can write codes which computer can understand.  But only a good developer write code which 
+humans can understand. 
+What is camel case
+
+If a function returns something then only we can store it in some variable.
+eg var var_name = func_name()

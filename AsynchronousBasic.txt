@@ -1,0 +1,51 @@
+WHat is asynchonous programming - Parallel and concurrent
+
+The program which do not respond as per the requirement and are dependent on some other devices to get desired 
+output to produce result.
+
+Event Loop - 
+Thread-Unit of the process execution
+Every program has at least 1 thread to communicate with the processor.  This is the main thread.  It accept task
+from the user and passes to processor for execution.  If the processor needs some time to complete the task then 
+the main thread creates a new thread and assigns it to handle that process.  It keeps itself free always so that 
+it could accept any other instruction from the user to executes.
+
+Multithreaded programming languages - C#, Java, Python
+
+Javascript is single thread language.  For attaining multi threaded communication it has the mechanism of Event Loop.
+
+Terminology of Event Loop - EVENT QUE - is a queue which contains tasks to be carried out next.
+Event loop consists of Main thread, Event que and Browser/Nodes.JS Threadpools.
+
+IO operations - FS calls, DB Calla, API calls, Network Calls
+Javascript core doesnt support parallel execution.  It depends on hosting environment.  JS dont run independently.
+On client side it runs on browser and on server side it runs on node.JS.  If it finds any operation requiring
+some time it assigns it to the Browser/Node.JS.  Browser/Node.JS(have thread pools)
+
+Javascript assigns only IO tasks to thread pools.  Synchronous operations it perform by itself.  So if JS sees a 
+task which has setTimer function even with a delay of 0ms it will be pushed to thread pool, which in turn read by 
+the node JS and it sees 0ms delay timer it will be pushed back to queue and the sync function will be executed 
+prior to async function.
+
+To overcome the problem of sync and async operations one way is CALLBACK function in which we pass the sync 
+operation as a parameter to the async function.  See file Asynchronous.JS
+
+Callback hell -  When there are multiple chain of Callback of async function one to one then it is called 
+Callback hell.  To avoid the callback hell there is a concept called PROMISE
+
+PROMISE : It is designed in such a way that it guarantees that either I will give you result or error message.
+callback does not guarantees it.    const promise = new Promise();   - See Callback.js for syntax.
+Promise returns either Resolve or REJECT only once.
+
+ASYNC AND AWAIT METHOD - for smooth functioning of async function(I/O function) and await function (Local function)
+
+
+ERROR CATCHING : To avoid error handling, lack of readability and for preventing loss of control over data files..
+
+
+How to create promise?  How to hold sync task to wait for async task to finish?  How to handle errors?
+new Promise()           Promise.then,  async-await function                     try{   }catch{err} block
+
+In promise.then errors are handles by the err..catch functions itself.  In async await use try catch block
+
+
