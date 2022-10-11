@@ -64,5 +64,5 @@ function completedHW (){
 doHomeWork(completedHW);
 
 }
-
-const promise = new Promise(resolve(), rejects());
+ 
+const promise = new Promise(resolve(), rejects());          //syntax of promise declaration
